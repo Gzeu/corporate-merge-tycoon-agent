@@ -1,0 +1,83 @@
+{
+  "name": "corporate-merge-tycoon-agent",
+  "version": "1.0.0",
+  "description": "🏢⚡ Corporate Merge Tycoon Agent - Sistem integrat de 20 taskuri pentru simularea operațiunilor corporative pe MultiversX blockchain cu funcționalități M&A și guvernanță DAO",
+  "main": "src/agent.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/agent.js",
+    "dev": "nodemon src/agent.js",
+    "test": "jest tests/unit-tests.js",
+    "test:integration": "jest tests/integration-tests.js --testTimeout=30000",
+    "test:e2e": "npm run test && npm run test:integration",
+    "build": "npm run build:contracts && npm run build:docs",
+    "build:contracts": "node scripts/deploy-contracts.js",
+    "build:docs": "jsdoc src/ -d docs/api/",
+    "lint": "eslint src/ --ext .js",
+    "format": "prettier --write src/ examples/ tests/"
+  },
+  "keywords": [
+    "multiversx",
+    "blockchain",
+    "gaming",
+    "dao",
+    "merger",
+    "acquisition",
+    "esdt",
+    "smart-contracts",
+    "corporate",
+    "simulation",
+    "egld",
+    "governance",
+    "defi",
+    "web3"
+  ],
+  "author": {
+    "name": "George Pricop",
+    "email": "pricopgeorge@gmail.com",
+    "url": "https://github.com/Gzeu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gzeu/corporate-merge-tycoon-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gzeu/corporate-merge-tycoon-agent/issues"
+  },
+  "homepage": "https://github.com/Gzeu/corporate-merge-tycoon-agent#readme",
+  "dependencies": {
+    "@multiversx/sdk-core": "^13.0.0",
+    "@multiversx/sdk-network-providers": "^3.0.0",
+    "@multiversx/sdk-wallet": "^4.0.0",
+    "@multiversx/sdk-dapp": "^2.0.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.11.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.3",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "eslint": "^8.52.0",
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.2",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Gzeu"
+  }
+}

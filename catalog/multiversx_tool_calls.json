@@ -1,0 +1,535 @@
+{
+  "tool_calls_metadata": {
+    "version": "1.0.0",
+    "blockchain": "MultiversX",
+    "sdk_version": "13.0.0+",
+    "author": "George Pricop (@Gzeu)",
+    "description": "Comprehensive tool-calls specifications for MultiversX blockchain operations in Corporate Merge Tycoon Agent"
+  },
+  "MultiversX_Blockchain_Tools": {
+    "createESDT": {
+      "name": "createESDT",
+      "description": "Create a new ESDT (eStandard Digital Token) on MultiversX network with customizable distribution",
+      "category": "Token Management",
+      "parameters": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "description": "Token name (e.g., 'TechCorp')",
+          "example": "TechCorp"
+        },
+        "ticker": {
+          "type": "string",
+          "required": true,
+          "description": "Token ticker symbol (3-10 characters)",
+          "example": "TECH"
+        },
+        "supply": {
+          "type": "number",
+          "required": true,
+          "description": "Total token supply",
+          "example": 1000000
+        },
+        "decimals": {
+          "type": "number",
+          "required": true,
+          "description": "Number of decimal places (typically 18)",
+          "example": 18
+        },
+        "distribution": {
+          "type": "object",
+          "required": true,
+          "description": "Token distribution percentages",
+          "properties": {
+            "founder": {"type": "number", "description": "Founder allocation percentage"},
+            "employees": {"type": "number", "description": "Employee allocation percentage"},
+            "public": {"type": "number", "description": "Public sale allocation percentage"},
+            "treasury": {"type": "number", "description": "Treasury allocation percentage"}
+          }
+        }
+      },
+      "returns": {
+        "transaction_hash": "string",
+        "token_identifier": "string",
+        "deployment_status": "string",
+        "gas_used": "number",
+        "contract_address": "string"
+      },
+      "example": {
+        "name": "TechCorp",
+        "ticker": "TECH",
+        "supply": 1000000,
+        "decimals": 18,
+        "distribution": {
+          "founder": 25,
+          "employees": 20,
+          "public": 30,
+          "treasury": 25
+        }
+      }
+    },
+    "monitorNetwork": {
+      "name": "monitorNetwork",
+      "description": "Monitor MultiversX network health, validator performance, and transaction metrics",
+      "category": "Network Monitoring",
+      "parameters": {
+        "network_endpoint": {
+          "type": "string",
+          "required": true,
+          "description": "MultiversX network endpoint URL",
+          "example": "https://gateway.multiversx.com"
+        },
+        "validator_addresses": {
+          "type": "array",
+          "required": false,
+          "description": "List of validator addresses to monitor",
+          "example": ["erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz"]
+        },
+        "monitoring_interval": {
+          "type": "number",
+          "required": true,
+          "description": "Monitoring interval in seconds",
+          "example": 30
+        },
+        "metrics_to_track": {
+          "type": "array",
+          "required": true,
+          "description": "List of metrics to monitor",
+          "example": ["network_status", "tps", "block_time", "validator_status"]
+        }
+      },
+      "returns": {
+        "network_health": "object",
+        "validator_performance": "object",
+        "transaction_metrics": "object",
+        "alerts": "array"
+      }
+    },
+    "bridgeCrossChain": {
+      "name": "bridgeCrossChain",
+      "description": "Bridge tokens between MultiversX and other blockchain networks",
+      "category": "Cross-chain Operations",
+      "parameters": {
+        "source_chain": {
+          "type": "string",
+          "required": true,
+          "description": "Source blockchain network",
+          "example": "MultiversX"
+        },
+        "target_chain": {
+          "type": "string",
+          "required": true,
+          "description": "Target blockchain network",
+          "example": "Ethereum"
+        },
+        "token_address": {
+          "type": "string",
+          "required": true,
+          "description": "Token contract address or identifier",
+          "example": "TECH-abc123"
+        },
+        "amount": {
+          "type": "string",
+          "required": true,
+          "description": "Amount to bridge (in wei format)",
+          "example": "1000000000000000000"
+        },
+        "recipient_address": {
+          "type": "string",
+          "required": true,
+          "description": "Recipient address on target chain",
+          "example": "0x742d35Cc6634C0532925a3b8D355f5d4F1c6BC1c"
+        }
+      },
+      "returns": {
+        "bridge_transaction_hash": "string",
+        "confirmation_status": "string",
+        "estimated_completion": "string",
+        "fees": "object"
+      }
+    }
+  },
+  "Company_Management_Tools": {
+    "analyzePerformance": {
+      "name": "analyzePerformance",
+      "description": "Analyze company performance metrics including financial health and market position",
+      "category": "Analytics",
+      "parameters": {
+        "company_token": {
+          "type": "string",
+          "required": true,
+          "description": "Company token identifier",
+          "example": "TECH-abc123"
+        },
+        "time_period": {
+          "type": "string",
+          "required": true,
+          "description": "Analysis time period (1d, 7d, 30d, 90d, 1y)",
+          "example": "30d"
+        },
+        "metrics_types": {
+          "type": "array",
+          "required": true,
+          "description": "Types of metrics to analyze",
+          "example": ["financial", "market", "operational", "governance"]
+        }
+      },
+      "returns": {
+        "performance_score": "number",
+        "financial_metrics": "object",
+        "market_metrics": "object",
+        "recommendations": "array",
+        "trend_analysis": "object"
+      }
+    },
+    "optimizeDistribution": {
+      "name": "optimizeDistribution",
+      "description": "Optimize token distribution strategy based on performance and market data",
+      "category": "Optimization",
+      "parameters": {
+        "current_distribution": {
+          "type": "object",
+          "required": true,
+          "description": "Current token distribution structure"
+        },
+        "performance_data": {
+          "type": "object",
+          "required": true,
+          "description": "Historical performance data"
+        },
+        "optimization_goals": {
+          "type": "array",
+          "required": true,
+          "description": "Optimization objectives",
+          "example": ["maximize_liquidity", "improve_governance", "incentivize_growth"]
+        }
+      },
+      "returns": {
+        "optimized_distribution": "object",
+        "projected_impact": "object",
+        "implementation_timeline": "object"
+      }
+    },
+    "manageVesting": {
+      "name": "manageVesting",
+      "description": "Manage employee token vesting schedules and automated distributions",
+      "category": "Employee Management",
+      "parameters": {
+        "employee_list": {
+          "type": "array",
+          "required": true,
+          "description": "List of employee addresses and allocations"
+        },
+        "vesting_schedule": {
+          "type": "object",
+          "required": true,
+          "description": "Vesting schedule configuration",
+          "properties": {
+            "cliff_period": {"type": "number", "description": "Cliff period in months"},
+            "vesting_duration": {"type": "number", "description": "Total vesting duration in months"},
+            "release_frequency": {"type": "string", "description": "Release frequency (monthly, quarterly)"}
+          }
+        }
+      },
+      "returns": {
+        "vesting_contracts": "array",
+        "distribution_schedule": "object",
+        "automation_status": "string"
+      }
+    }
+  },
+  "DAO_Governance_Tools": {
+    "createProposal": {
+      "name": "createProposal",
+      "description": "Create a new governance proposal for community voting",
+      "category": "Governance",
+      "parameters": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "description": "Proposal title",
+          "example": "Upgrade Contract v2.0"
+        },
+        "description": {
+          "type": "string",
+          "required": true,
+          "description": "Detailed proposal description",
+          "example": "Implement new merger mechanics and governance features"
+        },
+        "quorum": {
+          "type": "number",
+          "required": true,
+          "description": "Minimum quorum percentage required",
+          "example": 30
+        },
+        "threshold": {
+          "type": "number",
+          "required": true,
+          "description": "Minimum approval percentage required",
+          "example": 60
+        },
+        "voting_window": {
+          "type": "number",
+          "required": true,
+          "description": "Voting period in seconds",
+          "example": 604800
+        }
+      },
+      "returns": {
+        "proposal_id": "string",
+        "transaction_hash": "string",
+        "voting_start_time": "number",
+        "voting_end_time": "number"
+      }
+    },
+    "monitorVotes": {
+      "name": "monitorVotes",
+      "description": "Monitor active proposals and track voting progress",
+      "category": "Governance",
+      "parameters": {
+        "active_proposals": {
+          "type": "array",
+          "required": true,
+          "description": "List of active proposal IDs to monitor"
+        },
+        "monitoring_period": {
+          "type": "number",
+          "required": true,
+          "description": "Monitoring period in hours",
+          "example": 24
+        }
+      },
+      "returns": {
+        "voting_progress": "object",
+        "participation_metrics": "object",
+        "outcome_predictions": "object",
+        "alerts": "array"
+      }
+    },
+    "executeDecision": {
+      "name": "executeDecision",
+      "description": "Execute approved governance decisions automatically",
+      "category": "Governance",
+      "parameters": {
+        "approved_proposal": {
+          "type": "object",
+          "required": true,
+          "description": "Approved proposal details with execution parameters"
+        }
+      },
+      "returns": {
+        "execution_status": "string",
+        "transaction_hashes": "array",
+        "audit_trail": "object",
+        "completion_time": "string"
+      }
+    }
+  },
+  "Merger_Acquisition_Tools": {
+    "performDueDiligence": {
+      "name": "performDueDiligence",
+      "description": "AI-powered comprehensive due diligence analysis for merger targets",
+      "category": "M&A Operations",
+      "parameters": {
+        "target_company": {
+          "type": "object",
+          "required": true,
+          "description": "Target company information including token, metrics, and governance data"
+        },
+        "analysis_depth": {
+          "type": "string",
+          "required": true,
+          "description": "Analysis depth level (basic, standard, comprehensive)",
+          "example": "comprehensive"
+        },
+        "risk_tolerance": {
+          "type": "string",
+          "required": true,
+          "description": "Risk tolerance level (conservative, moderate, aggressive)",
+          "example": "moderate"
+        }
+      },
+      "returns": {
+        "due_diligence_report": "object",
+        "risk_assessment": "object",
+        "valuation_range": "object",
+        "merger_recommendation": "string",
+        "potential_synergies": "array"
+      }
+    },
+    "calculateExchangeRatio": {
+      "name": "calculateExchangeRatio",
+      "description": "Calculate fair exchange ratios and valuations for merger transactions",
+      "category": "M&A Operations",
+      "parameters": {
+        "company_a_metrics": {
+          "type": "object",
+          "required": true,
+          "description": "First company's financial and market metrics"
+        },
+        "company_b_metrics": {
+          "type": "object",
+          "required": true,
+          "description": "Second company's financial and market metrics"
+        },
+        "market_conditions": {
+          "type": "object",
+          "required": true,
+          "description": "Current market conditions and sector analysis"
+        }
+      },
+      "returns": {
+        "exchange_ratio": "number",
+        "valuation_analysis": "object",
+        "negotiation_range": "object",
+        "merger_premium": "number"
+      }
+    },
+    "executeMerger": {
+      "name": "executeMerger",
+      "description": "Execute post-merger integration including token consolidation",
+      "category": "M&A Operations",
+      "parameters": {
+        "tokenA": {
+          "type": "string",
+          "required": true,
+          "description": "First company token identifier",
+          "example": "TECH-abc123"
+        },
+        "tokenB": {
+          "type": "string",
+          "required": true,
+          "description": "Second company token identifier",
+          "example": "INNO-def456"
+        },
+        "exchangeRatio": {
+          "type": "number",
+          "required": true,
+          "description": "Exchange ratio for token conversion",
+          "example": 1.5
+        },
+        "lockPeriod": {
+          "type": "number",
+          "required": true,
+          "description": "Lock period for merged tokens in seconds",
+          "example": 2592000
+        }
+      },
+      "returns": {
+        "merger_transaction_hash": "string",
+        "new_token_identifier": "string",
+        "conversion_status": "object",
+        "governance_transition": "object"
+      }
+    }
+  },
+  "Market_Analysis_Tools": {
+    "gatherMarketIntelligence": {
+      "name": "gatherMarketIntelligence",
+      "description": "Collect and analyze real-time market intelligence data",
+      "category": "Market Analysis",
+      "parameters": {
+        "market_segments": {
+          "type": "array",
+          "required": true,
+          "description": "Market segments to analyze",
+          "example": ["defi", "gaming", "enterprise"]
+        },
+        "competitor_list": {
+          "type": "array",
+          "required": true,
+          "description": "List of competitors to monitor"
+        },
+        "intelligence_scope": {
+          "type": "string",
+          "required": true,
+          "description": "Scope of intelligence gathering (local, regional, global)",
+          "example": "global"
+        }
+      },
+      "returns": {
+        "market_intelligence_report": "object",
+        "competitive_analysis": "object",
+        "trend_analysis": "object",
+        "opportunity_identification": "array"
+      }
+    },
+    "analyzePartnerships": {
+      "name": "analyzePartnerships",
+      "description": "Identify and analyze potential strategic partnerships",
+      "category": "Strategic Analysis",
+      "parameters": {
+        "partnership_criteria": {
+          "type": "object",
+          "required": true,
+          "description": "Criteria for partnership evaluation"
+        },
+        "target_sectors": {
+          "type": "array",
+          "required": true,
+          "description": "Target sectors for partnerships",
+          "example": ["fintech", "healthcare", "supply_chain"]
+        }
+      },
+      "returns": {
+        "partnership_recommendations": "array",
+        "compatibility_analysis": "object",
+        "potential_benefits": "object",
+        "implementation_roadmap": "object"
+      }
+    }
+  },
+  "Technical_Operations_Tools": {
+    "monitorSystem": {
+      "name": "monitorSystem",
+      "description": "Monitor system health and performance with proactive alerting",
+      "category": "System Monitoring",
+      "parameters": {
+        "monitoring_scope": {
+          "type": "array",
+          "required": true,
+          "description": "Components to monitor",
+          "example": ["api", "database", "smart_contracts", "network_connectivity"]
+        }
+      },
+      "returns": {
+        "system_health_dashboard": "object",
+        "performance_metrics": "object",
+        "alerts": "array",
+        "recommendations": "array"
+      }
+    },
+    "deployContracts": {
+      "name": "deployContracts",
+      "description": "Deploy and manage smart contracts with automated testing and verification",
+      "category": "Contract Management",
+      "parameters": {
+        "contract_specs": {
+          "type": "object",
+          "required": true,
+          "description": "Smart contract specifications and deployment parameters"
+        }
+      },
+      "returns": {
+        "deployment_status": "string",
+        "contract_addresses": "object",
+        "verification_results": "object",
+        "gas_usage": "object"
+      }
+    }
+  },
+  "integration_examples": {
+    "basic_token_creation": {
+      "description": "Example of creating a basic ESDT token",
+      "code": "const result = await agent.executeTask('BLK002', { name: 'TechCorp', ticker: 'TECH', supply: 1000000, decimals: 18, distribution: { founder: 25, employees: 20, public: 30, treasury: 25 } });"
+    },
+    "merger_execution": {
+      "description": "Example of executing a company merger",
+      "code": "const merger = await agent.executeTask('MRG003', { tokenA: 'TECH-abc123', tokenB: 'INNO-def456', exchangeRatio: 1.5, lockPeriod: 2592000 });"
+    },
+    "governance_proposal": {
+      "description": "Example of creating a DAO governance proposal",
+      "code": "const proposal = await agent.executeTask('GOV001', { title: 'Upgrade Contract v2.0', description: 'Implement new features', quorum: 30, threshold: 60, voting_window: 604800 });"
+    }
+  }
+}

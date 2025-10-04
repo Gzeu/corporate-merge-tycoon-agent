@@ -1,0 +1,467 @@
+{
+  "agent_info": {
+    "name": "Corporate Merge Tycoon Agent",
+    "version": "1.0.0",
+    "description": "Sistem integrat de 20 taskuri pentru simularea operațiunilor corporative pe MultiversX cu funcționalități M&A și guvernanță DAO",
+    "blockchain": "MultiversX",
+    "total_tasks": 20,
+    "categories": 8,
+    "author": "George Pricop (@Gzeu)",
+    "repository": "https://github.com/Gzeu/corporate-merge-tycoon-agent"
+  },
+  "system_prompt": "You are the Corporate Merge Tycoon Agent, specialized in blockchain-based corporate simulations on MultiversX. You orchestrate 20 structured tasks across 8 functional areas: Blockchain Operations, Company Management, Merger & Acquisition, DAO Governance, Market Analysis, User Support, Educational, and Technical Operations. Your expertise includes ESDT token creation, M&A mechanics, DAO governance, real-time analytics, and smart contract automation. You prioritize Critical tasks (M&A operations, governance execution, technical monitoring), execute High priority tasks (blockchain ops, analytics, user support), and manage Medium priority tasks (optimization, education, partnerships). Always maintain security best practices, ensure compliance, and provide comprehensive logging for all operations.",
+  "task_categories": {
+    "blockchain_operations": {
+      "category_id": "BLK",
+      "name": "Blockchain Operations",
+      "description": "Core blockchain functionalities including network monitoring, token creation, and cross-chain operations",
+      "task_count": 3,
+      "priority_level": "High/Medium",
+      "average_complexity": 5.7,
+      "tasks": {
+        "BLK001": {
+          "task_id": "BLK001",
+          "name": "Monitorizare Rețea EGLD",
+          "description": "Real-time monitoring of MultiversX network health, validator performance, and transaction metrics",
+          "priority": "High",
+          "frequency": "Real-time",
+          "complexity": "High",
+          "parameters": [
+            "network_endpoint",
+            "validator_addresses",
+            "monitoring_interval",
+            "alert_thresholds",
+            "metrics_to_track",
+            "dashboard_config",
+            "notification_channels"
+          ],
+          "expected_output": "Network health dashboard with real-time metrics, alerts for anomalies, validator performance reports",
+          "dependencies": [],
+          "estimated_duration": "Continuous",
+          "tools_required": ["MultiversX API", "WebSocket connections", "Analytics engine"]
+        },
+        "BLK002": {
+          "task_id": "BLK002",
+          "name": "Creare Token ESDT",
+          "description": "Automated ESDT token creation with customizable distribution, metadata, and governance features",
+          "priority": "High",
+          "frequency": "On-demand",
+          "complexity": "Medium",
+          "parameters": [
+            "company_name",
+            "ticker",
+            "supply",
+            "decimals",
+            "founder_pct",
+            "employees_pct",
+            "public_pct",
+            "treasury_pct"
+          ],
+          "expected_output": "Deployed ESDT token with specified distribution, transaction hash, token identifier",
+          "dependencies": ["BLK001"],
+          "estimated_duration": "5-10 minutes",
+          "tools_required": ["MultiversX SDK", "Wallet integration", "Smart contracts"]
+        },
+        "BLK003": {
+          "task_id": "BLK003",
+          "name": "Bridge Cross-chain",
+          "description": "Facilitate token transfers and data synchronization between MultiversX and other blockchain networks",
+          "priority": "Medium",
+          "frequency": "La nevoie",
+          "complexity": "High",
+          "parameters": [
+            "source_chain",
+            "target_chain",
+            "token_address",
+            "amount",
+            "recipient_address",
+            "bridge_protocol"
+          ],
+          "expected_output": "Successful cross-chain transfer with confirmation on both networks",
+          "dependencies": ["BLK002"],
+          "estimated_duration": "15-30 minutes",
+          "tools_required": ["Bridge protocols", "Multi-chain SDKs", "Liquidity pools"]
+        }
+      }
+    },
+    "company_management": {
+      "category_id": "CMP",
+      "name": "Company Management",
+      "description": "Corporate analytics, performance optimization, and employee management systems",
+      "task_count": 3,
+      "priority_level": "High/Medium",
+      "average_complexity": 2.7,
+      "tasks": {
+        "CMP001": {
+          "task_id": "CMP001",
+          "name": "Analiză Performanță",
+          "description": "Comprehensive analysis of company performance metrics including financial health, market position, and operational efficiency",
+          "priority": "High",
+          "frequency": "Daily",
+          "complexity": "Medium",
+          "parameters": [
+            "company_token",
+            "time_period",
+            "metrics_types"
+          ],
+          "expected_output": "Detailed performance report with recommendations, trend analysis, and actionable insights",
+          "dependencies": ["BLK002"],
+          "estimated_duration": "10-15 minutes",
+          "tools_required": ["Analytics engine", "Market data APIs", "Reporting system"]
+        },
+        "CMP002": {
+          "task_id": "CMP002",
+          "name": "Optimizare Distribuție",
+          "description": "Optimize token distribution strategies based on performance metrics and market conditions",
+          "priority": "Medium",
+          "frequency": "Weekly",
+          "complexity": "Medium",
+          "parameters": [
+            "current_distribution",
+            "performance_data",
+            "optimization_goals"
+          ],
+          "expected_output": "Optimized distribution strategy with projected impact analysis",
+          "dependencies": ["CMP001"],
+          "estimated_duration": "20-30 minutes",
+          "tools_required": ["Optimization algorithms", "Simulation engine", "Strategy planner"]
+        },
+        "CMP003": {
+          "task_id": "CMP003",
+          "name": "Vesting Angajați",
+          "description": "Manage employee token vesting schedules, cliff periods, and distribution automation",
+          "priority": "Medium",
+          "frequency": "Monthly",
+          "complexity": "Low",
+          "parameters": [
+            "employee_list",
+            "vesting_schedule",
+            "cliff_period"
+          ],
+          "expected_output": "Updated vesting contracts with automated distribution schedules",
+          "dependencies": ["BLK002"],
+          "estimated_duration": "15-20 minutes",
+          "tools_required": ["Smart contracts", "Scheduling system", "Employee database"]
+        }
+      }
+    },
+    "merger_acquisition": {
+      "category_id": "MRG",
+      "name": "Merger & Acquisition",
+      "description": "AI-powered M&A operations including due diligence, valuations, and post-merger integration",
+      "task_count": 3,
+      "priority_level": "Critical",
+      "average_complexity": 2.3,
+      "tasks": {
+        "MRG001": {
+          "task_id": "MRG001",
+          "name": "Due Diligence AI",
+          "description": "AI-powered comprehensive due diligence analysis for potential merger targets",
+          "priority": "Critical",
+          "frequency": "Per fuziune",
+          "complexity": "High",
+          "parameters": [
+            "target_company",
+            "analysis_depth",
+            "risk_tolerance"
+          ],
+          "expected_output": "Complete due diligence report with risk assessment, valuation analysis, and merger recommendations",
+          "dependencies": ["CMP001"],
+          "estimated_duration": "45-60 minutes",
+          "tools_required": ["AI analysis engine", "Market data", "Risk assessment tools"]
+        },
+        "MRG002": {
+          "task_id": "MRG002",
+          "name": "Valuări & Exchange Ratios",
+          "description": "Calculate fair exchange ratios and valuations for merger transactions",
+          "priority": "Critical",
+          "frequency": "Per fuziune",
+          "complexity": "Medium",
+          "parameters": [
+            "company_a_metrics",
+            "company_b_metrics",
+            "market_conditions"
+          ],
+          "expected_output": "Detailed valuation report with recommended exchange ratios and negotiation parameters",
+          "dependencies": ["MRG001"],
+          "estimated_duration": "30-40 minutes",
+          "tools_required": ["Valuation models", "Market analysis", "Financial calculators"]
+        },
+        "MRG003": {
+          "task_id": "MRG003",
+          "name": "Integrare Post-merger",
+          "description": "Execute post-merger integration including token consolidation and governance transition",
+          "priority": "Critical",
+          "frequency": "Post-merger",
+          "complexity": "Low",
+          "parameters": [
+            "merger_terms",
+            "integration_timeline"
+          ],
+          "expected_output": "Successfully integrated corporate structure with unified token and governance system",
+          "dependencies": ["MRG002", "GOV003"],
+          "estimated_duration": "60-90 minutes",
+          "tools_required": ["Smart contracts", "Governance system", "Token migration tools"]
+        }
+      }
+    },
+    "dao_governance": {
+      "category_id": "GOV",
+      "name": "DAO Governance",
+      "description": "Decentralized governance operations including proposal creation, voting management, and decision execution",
+      "task_count": 3,
+      "priority_level": "Critical/High/Medium",
+      "average_complexity": 2.0,
+      "tasks": {
+        "GOV001": {
+          "task_id": "GOV001",
+          "name": "Creare Propuneri",
+          "description": "Create and submit governance proposals for community voting",
+          "priority": "High",
+          "frequency": "La nevoie",
+          "complexity": "Medium",
+          "parameters": [
+            "proposal_type",
+            "proposal_details",
+            "voting_parameters"
+          ],
+          "expected_output": "Successfully created governance proposal with voting mechanism activated",
+          "dependencies": ["BLK002"],
+          "estimated_duration": "15-25 minutes",
+          "tools_required": ["DAO contracts", "Proposal system", "Voting mechanism"]
+        },
+        "GOV002": {
+          "task_id": "GOV002",
+          "name": "Monitorizare Voturi",
+          "description": "Monitor active proposals, track voting progress, and analyze participation",
+          "priority": "Medium",
+          "frequency": "Weekly",
+          "complexity": "Low",
+          "parameters": [
+            "active_proposals",
+            "monitoring_period"
+          ],
+          "expected_output": "Voting progress reports with participation analytics and outcome predictions",
+          "dependencies": ["GOV001"],
+          "estimated_duration": "10-15 minutes",
+          "tools_required": ["Voting tracker", "Analytics dashboard", "Notification system"]
+        },
+        "GOV003": {
+          "task_id": "GOV003",
+          "name": "Execuție Decizii",
+          "description": "Execute approved governance decisions and implement changes",
+          "priority": "Critical",
+          "frequency": "Post-vote",
+          "complexity": "Low",
+          "parameters": [
+            "approved_proposal",
+            "execution_parameters"
+          ],
+          "expected_output": "Successfully implemented governance decision with audit trail",
+          "dependencies": ["GOV002"],
+          "estimated_duration": "20-30 minutes",
+          "tools_required": ["Execution engine", "Smart contracts", "Audit system"]
+        }
+      }
+    },
+    "market_analysis": {
+      "category_id": "MKT",
+      "name": "Market Analysis",
+      "description": "Real-time market intelligence and strategic partnership analysis",
+      "task_count": 2,
+      "priority_level": "High/Medium",
+      "average_complexity": 2.5,
+      "tasks": {
+        "MKT001": {
+          "task_id": "MKT001",
+          "name": "Inteligență Real-time",
+          "description": "Real-time market intelligence gathering and analysis for strategic decision making",
+          "priority": "High",
+          "frequency": "Hourly",
+          "complexity": "High",
+          "parameters": [
+            "market_segments",
+            "competitor_list",
+            "intelligence_scope"
+          ],
+          "expected_output": "Comprehensive market intelligence report with actionable insights and trend analysis",
+          "dependencies": ["BLK001"],
+          "estimated_duration": "15-20 minutes",
+          "tools_required": ["Market data APIs", "Intelligence engine", "Trend analysis"]
+        },
+        "MKT002": {
+          "task_id": "MKT002",
+          "name": "Parteneriate Strategice",
+          "description": "Identify and analyze potential strategic partnerships and collaboration opportunities",
+          "priority": "Medium",
+          "frequency": "Weekly",
+          "complexity": "Medium",
+          "parameters": [
+            "partnership_criteria",
+            "target_sectors"
+          ],
+          "expected_output": "Strategic partnership recommendations with compatibility analysis and potential benefits",
+          "dependencies": ["MKT001"],
+          "estimated_duration": "25-35 minutes",
+          "tools_required": ["Partnership database", "Compatibility engine", "Strategic analysis"]
+        }
+      }
+    },
+    "user_support": {
+      "category_id": "SUP",
+      "name": "User Support",
+      "description": "24/7 user support and guided onboarding systems",
+      "task_count": 2,
+      "priority_level": "High",
+      "average_complexity": 1.0,
+      "tasks": {
+        "SUP001": {
+          "task_id": "SUP001",
+          "name": "Suport 24/7",
+          "description": "Provide continuous user support through multiple channels with AI-assisted responses",
+          "priority": "High",
+          "frequency": "Continuu",
+          "complexity": "Low",
+          "parameters": [
+            "support_channels"
+          ],
+          "expected_output": "Resolved user inquiries with satisfaction tracking and continuous availability",
+          "dependencies": [],
+          "estimated_duration": "Continuous",
+          "tools_required": ["Support system", "AI chatbot", "Ticketing system"]
+        },
+        "SUP002": {
+          "task_id": "SUP002",
+          "name": "Onboarding",
+          "description": "Guided onboarding process for new users with interactive tutorials and setup assistance",
+          "priority": "High",
+          "frequency": "Per utilizator nou",
+          "complexity": "Low",
+          "parameters": [
+            "user_profile"
+          ],
+          "expected_output": "Successfully onboarded user with completed profile and active participation",
+          "dependencies": ["SUP001"],
+          "estimated_duration": "30-45 minutes",
+          "tools_required": ["Onboarding system", "Tutorial engine", "Progress tracker"]
+        }
+      }
+    },
+    "educational": {
+      "category_id": "EDU",
+      "name": "Educational",
+      "description": "Interactive M&A education modules and personalized coaching systems",
+      "task_count": 2,
+      "priority_level": "Medium",
+      "average_complexity": 1.0,
+      "tasks": {
+        "EDU001": {
+          "task_id": "EDU001",
+          "name": "Module M&A",
+          "description": "Interactive educational modules covering M&A fundamentals, strategies, and blockchain applications",
+          "priority": "Medium",
+          "frequency": "Lunar",
+          "complexity": "Low",
+          "parameters": [
+            "module_level"
+          ],
+          "expected_output": "Completed educational modules with certification and skill assessment",
+          "dependencies": [],
+          "estimated_duration": "45-60 minutes",
+          "tools_required": ["Learning management system", "Interactive content", "Assessment tools"]
+        },
+        "EDU002": {
+          "task_id": "EDU002",
+          "name": "Coaching",
+          "description": "Personalized coaching sessions for advanced M&A strategies and corporate governance",
+          "priority": "Medium",
+          "frequency": "Weekly",
+          "complexity": "Low",
+          "parameters": [
+            "coaching_focus"
+          ],
+          "expected_output": "Personalized coaching session with actionable recommendations and skill development plan",
+          "dependencies": ["EDU001"],
+          "estimated_duration": "30-45 minutes",
+          "tools_required": ["Coaching platform", "Progress tracking", "Skill assessment"]
+        }
+      }
+    },
+    "technical_operations": {
+      "category_id": "TEC",
+      "name": "Technical Operations",
+      "description": "System monitoring and smart contract deployment operations",
+      "task_count": 2,
+      "priority_level": "Critical",
+      "average_complexity": 1.0,
+      "tasks": {
+        "TEC001": {
+          "task_id": "TEC001",
+          "name": "Monitoring Sistem",
+          "description": "Continuous system health monitoring with proactive alerting and performance optimization",
+          "priority": "Critical",
+          "frequency": "Continuu",
+          "complexity": "Low",
+          "parameters": [
+            "monitoring_scope"
+          ],
+          "expected_output": "System health dashboard with real-time metrics, alerts, and performance recommendations",
+          "dependencies": [],
+          "estimated_duration": "Continuous",
+          "tools_required": ["Monitoring tools", "Alert system", "Performance analytics"]
+        },
+        "TEC002": {
+          "task_id": "TEC002",
+          "name": "Deploy Contracts",
+          "description": "Automated deployment and management of smart contracts with version control and testing",
+          "priority": "Critical",
+          "frequency": "La nevoie",
+          "complexity": "Low",
+          "parameters": [
+            "contract_specs"
+          ],
+          "expected_output": "Successfully deployed smart contracts with verification and documentation",
+          "dependencies": ["TEC001"],
+          "estimated_duration": "15-30 minutes",
+          "tools_required": ["Deployment pipeline", "Testing framework", "Version control"]
+        }
+      }
+    }
+  },
+  "priority_distribution": {
+    "Critical": {
+      "count": 6,
+      "percentage": 30.0,
+      "tasks": ["MRG001", "MRG002", "MRG003", "GOV003", "TEC001", "TEC002"]
+    },
+    "High": {
+      "count": 7,
+      "percentage": 35.0,
+      "tasks": ["BLK001", "BLK002", "CMP001", "GOV001", "MKT001", "SUP001", "SUP002"]
+    },
+    "Medium": {
+      "count": 7,
+      "percentage": 35.0,
+      "tasks": ["BLK003", "CMP002", "CMP003", "GOV002", "MKT002", "EDU001", "EDU002"]
+    }
+  },
+  "integration_metadata": {
+    "api_version": "v1.0",
+    "sdk_compatibility": "MultiversX SDK v13+",
+    "required_permissions": ["token_creation", "contract_deployment", "governance_participation"],
+    "supported_networks": ["mainnet", "testnet", "devnet"],
+    "deployment_requirements": {
+      "node_version": ">=18.0.0",
+      "memory": ">=4GB",
+      "storage": ">=50GB",
+      "network": "stable_internet"
+    },
+    "security_features": ["multi_sig", "rate_limiting", "audit_logging", "kyc_aml", "bug_bounty"],
+    "compliance_standards": ["GDPR", "SOC2", "ISO27001"],
+    "monitoring_sla": {
+      "uptime": "99.9%",
+      "response_time_p95": "2000ms",
+      "availability_zones": 3
+    }
+  }
+}
